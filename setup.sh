@@ -2,7 +2,7 @@
 set -xe
 
 #查看mysql服务的状态
-mysqld
+mysqld --user=root
 echo 'View mysql status'
 mysql -uroot -p$MYSQL_ROOT_PASSWORD -e "select version();" &> /dev/null
 sleep 30
