@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -xe
 
 #查看mysql服务的状态
 echo 'View mysql status'
@@ -7,9 +7,9 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD -e "select version();" &> /dev/null
 
 #导入数据
 echo 'Perform upgrade sql......'
-mysql -uroot -p$MYSQL_ROOT_PASSWORD <<EOF
+mysql -uroot -p$MYSQL_ROOT_PASSWORD
 source /upgrade/5.1-5.2.sql;
-echo 'Data import is complete'
+echo 'Upgrade sql execution completed'
 
 tail -f /dev/null
 
