@@ -18,6 +18,6 @@ VOLUME [ "/var/lib/mysql" ]
 EXPOSE 3306
 
 #启动脚本
-CMD ["mysqld"]
+ENTRYPOINT [ "/setup.sh" ]
 
-ENTRYPOINT ["/setup.sh"]
+CMD [ "mysqld" ]
